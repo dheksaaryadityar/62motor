@@ -2,9 +2,9 @@
 
 class Dealer_model extends CI_Model
 {
-    public function get_data($tabel)
+    public function get_data($table)
     {
-        return $this->db->get($tabel);
+        return $this->db->get($table);
     }
 
     public function insert_data($data, $table)
