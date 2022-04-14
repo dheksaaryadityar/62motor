@@ -23,7 +23,7 @@
                 foreach ($motor as $mt) : ?>
                     <tr>
                         <td><?php echo $no++ ?></td>
-                        <td><img width="60px" src="<?php echo base_url() . 'assets/upload/' . $mt->gambar ?>"></td>
+                        <td><img width="60px" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>"></td>
                         <td><?php echo $mt->kode_type ?></td>
                         <td><?php echo $mt->merk ?></td>
                         <td><?php echo $mt->no_plat ?></td>
@@ -35,9 +35,9 @@
                             }
                             ?></td>
                         <td>
-                            <a href="" class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
-                            <a href="" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </a>
-                            <a href="" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i> </a>
+                            <a href="<?php echo base_url('admin/data_motor/detail_motor/' . $mt->id_motor) ?> " class="btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
+                            <a href="<?php echo base_url('admin/data_motor/delete_motor/' . $mt->id_motor) ?>" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </a>
+                            <a href="<?php echo base_url('admin/data_motor/update_motor/' . $mt->id_motor) ?>" class="btn btn-sm btn-primary"> <i class="fas fa-edit"></i> </a>
                         </td>
                     </tr>
 
