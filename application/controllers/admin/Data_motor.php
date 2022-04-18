@@ -28,7 +28,7 @@ class Data_motor extends CI_Controller
         } else {
             $kode_type = $this->input->post('kode_type');
             $merk = $this->input->post('merk');
-            $no_plat = $this->input->post('no_plat');
+            $harga = $this->input->post('harga');
             $warna = $this->input->post('warna');
             $tahun = $this->input->post('tahun');
             $status = $this->input->post('status');
@@ -48,7 +48,7 @@ class Data_motor extends CI_Controller
                 $data = array(
                     'kode_type' => $kode_type,
                     'merk' => $merk,
-                    'no_plat' => $no_plat,
+                    'harga' => $harga,
                     'tahun' => $tahun,
                     'warna' => $warna,
                     'status' => $status,
@@ -87,7 +87,7 @@ class Data_motor extends CI_Controller
             $id        = $this->input->post('id_motor');
             $kode_type = $this->input->post('kode_type');
             $merk = $this->input->post('merk');
-            $no_plat = $this->input->post('no_plat');
+            $harga = $this->input->post('harga');
             $warna = $this->input->post('warna');
             $tahun = $this->input->post('tahun');
             $status = $this->input->post('status');
@@ -108,7 +108,7 @@ class Data_motor extends CI_Controller
                 $data = array(
                     'kode_type' => $kode_type,
                     'merk' => $merk,
-                    'no_plat' => $no_plat,
+                    'harga' => $harga,
                     'tahun' => $tahun,
                     'warna' => $warna,
                     'status' => $status,
@@ -134,7 +134,7 @@ class Data_motor extends CI_Controller
     {
         $this->form_validation->set_rules('kode_type', 'Kode_type', 'required');
         $this->form_validation->set_rules('merk', 'Merk', 'required');
-        $this->form_validation->set_rules('no_plat', 'No plat', 'required');
+        $this->form_validation->set_rules('harga', 'Harga', 'required');
         $this->form_validation->set_rules('tahun', 'Tahun', 'required');
         $this->form_validation->set_rules('warna', 'Warna', 'required');
         $this->form_validation->set_rules('status', 'Status', 'required');

@@ -12,7 +12,7 @@
                     <th>Gambar</th>
                     <th>Type</th>
                     <th>Merk</th>
-                    <th>No Plat</th>
+                    <th>Harga</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
@@ -26,7 +26,7 @@
                         <td><img width="60px" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>"></td>
                         <td><?php echo $mt->kode_type ?></td>
                         <td><?php echo $mt->merk ?></td>
-                        <td><?php echo $mt->no_plat ?></td>
+                        <td><?php echo $mt->harga ?></td>
                         <td><?php
                             if ($mt->status == "0") {
                                 echo "<span class='badge badge-danger'>Tidak Tersedia</span>";

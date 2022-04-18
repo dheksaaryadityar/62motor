@@ -36,9 +36,9 @@
                                     <?php echo form_error('merk', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
                                 <div class="form-group">
-                                    <label>No Plat</label>
-                                    <input type="text" name="no_plat" class="form-control" value="<?php echo $mt->no_plat ?>">
-                                    <?php echo form_error('no_plat', '<div class="text-small text-danger">', '</div>') ?>
+                                    <label>Harga</label>
+                                    <input type="text" name="Harga" class="form-control" value="<?php echo $mt->harga ?>">
+                                    <?php echo form_error('harga', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Warna</label>

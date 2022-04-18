@@ -16,7 +16,7 @@
                     <div class="col-md-7">
                         <table class="table">
                             <tr>
-                                <td>Type Mobil </td>
+                                <td>Type Motor </td>
                                 <td>
                                     <?php if ($dt->kode_type == "001") {
                                         echo "Motor Matic";
@@ -24,6 +24,8 @@
                                         echo "Motor Bebek";
                                     } elseif ($dt->kode_type == "003") {
                                         echo "Motor Sport";
+                                    } elseif ($dt->kode_type == "004") {
+                                        echo "Motor Skuter";
                                     } else {
                                         echo "<span class='text-danger'>Type Motor Belum Ada</span>";
                                     }
@@ -35,8 +37,8 @@
                                 <td> <?php echo $dt->merk ?> </td>
                             </tr>
                             <tr>
-                                <td>No Plat</td>
-                                <td> <?php echo $dt->no_plat ?> </td>
+                                <td>Harga</td>
+                                <td> <?php echo $dt->harga ?> </td>
                             </tr>
                             <tr>
                                 <td>Warna</td>
