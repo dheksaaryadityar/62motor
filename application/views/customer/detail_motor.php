@@ -38,9 +38,9 @@
                             <td>
                                 <?php
                                 if ($dt->status == "0") {
-                                    echo "<span class='btn btn-danger' disable >Telah di Rental</span>";
+                                    echo "<span class='btn btn-danger' disable >Telah di jual</span>";
                                 } else {
-                                    echo anchor('customer/beli/tambah_beli' . $dt->id_motor, '<button class="btn btn-success" >Beli</button>');
+                                    echo anchor('customer/beli/tambah_beli/' . $dt->id_motor, '<button class="btn btn-success" >Beli</button>');
                                 }
 
                                 ?>
