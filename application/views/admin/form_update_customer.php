@@ -49,7 +49,7 @@
                 <input type="password" name="password" class="form-control" value="<?php echo $cs->password ?>">
                 <?php echo form_error('password', '<span class="text-small text-danger">', '</span>') ?>
             </div>
-            <button value="submit" class="btn btn-sm btn-primary">Submit</button>
+            <button value="submit" class="btn btn-sm btn-primary">Update</button>
             <button value="reset" class="btn btn-sm btn-danger">Reset</button>
 
         </form>

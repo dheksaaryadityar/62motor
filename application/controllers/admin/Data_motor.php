@@ -82,7 +82,7 @@ class Data_motor extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update_motor(1);
+            $this->update_motor();
         } else {
             $id        = $this->input->post('id_motor');
             $kode_type = $this->input->post('kode_type');

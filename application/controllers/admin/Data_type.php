@@ -46,7 +46,7 @@ class Data_type extends CI_Controller
     public function update_type($id)
     {
         $where = array('id_type' => $id);
-        $data['type'] = $this->db->query("SELECT * FROM type WHERE id_type='$id'")->result();
+        $data['type'] = $this->db->query("SELECT * FROM type WHERE id_type = '$id' ")->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/form_update_type', $data);
@@ -57,7 +57,7 @@ class Data_type extends CI_Controller
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
-            $this->update_type(1);
+            $this->update_type();
         } else {
             $id = $this->input->post('id_type');
             $kode_type = $this->input->post('kode_type');
