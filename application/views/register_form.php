@@ -37,7 +37,7 @@
                                     <div class="row">
                                         <div class="form-group col-6">
                                             <label for="password" class="d-block">Gender</label>
-                                            <select class="form-control" class="d-block" name="gender">
+                                            <select class="form-control" name="gender">
                                                 <option value="">Pilih Gender</option>
                                                 <option value="">Laki-laki</option>
                                                 <option value="">Perempuan</option>
@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="form-group col-6">
                                             <label for="no_telepon" class="d-block">No Telepon</label>
-                                            <input id="no_telepon" type="text" class="form-control" name="no_telepon">
+                                            <input id="no_telepon" type="number" class="form-control" name="no_telepon">
                                             <?php echo form_error('no_telepon', '<div class="text-small text-danger">', '</div>') ?>
                                         </div>
                                     </div>
@@ -76,7 +76,9 @@
                             </div>
                         </div>
 
-
+                        <div class="mt-5 text-muted text-center">
+                            Don't have already account? <a href="<?php echo base_url('auth/login') ?>">Login</a>
+                        </div>
                         <div class="simple-footer">
                             Copyright &copy; 62 Motor
                         </div>

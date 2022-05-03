@@ -17,16 +17,17 @@ class Register extends CI_Controller
             $no_telepon                  = $this->input->post('no_telepon');
             $no_ktp                      = $this->input->post('no_ktp');
             $password                    = md5($this->input->post('password'));
+            $role_id                     = '2';
 
             $data = array(
-
                 'nama' => $nama,
                 'username' => $username,
                 'alamat' => $alamat,
                 'gender' => $gender,
                 'no_telepon' => $no_telepon,
                 'no_ktp' => $no_ktp,
-                'password' => $password
+                'password' => $password,
+                'role_id' => $role_id
             );
 
             $this->Dealer_model->insert_data($data, 'customer');
@@ -39,6 +40,8 @@ class Register extends CI_Controller
             redirect('auth/login');
         }
     }
+
+
     public function _rules()
     {
         $this->form_validation->set_rules('nama', 'Nama', 'required');

@@ -25,12 +25,13 @@
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('register') ?>">Register</a></li>
 
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class=" me-1"></i>
-                    Login
-                </button>
-            </form>
+            <?php
+            if ($this->session->userdata('nama')) { ?>
+                <a href=" <?php echo base_url('auth/logout') ?> " class="btn btn-secondary">Welcome <?php echo $this->session->userdata('nama') ?> <span class="btn btn-sm btn-warning">Logout</span> </a>
+            <?php } else { ?>
+                <a href=" <?php echo base_url('auth/login') ?> "> <span class="btn btn-dark">Login</span> </a>
+            <?php } ?>
+
         </div>
     </div>
 </nav>
