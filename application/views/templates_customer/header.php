@@ -25,12 +25,16 @@
                 <li class="nav-item"><a class="nav-link" href="<?php echo base_url('register') ?>">Register</a></li>
 
             </ul>
-            <?php
-            if ($this->session->userdata('nama')) { ?>
-                <a href=" <?php echo base_url('auth/logout') ?> " class="btn btn-secondary">Welcome <?php echo $this->session->userdata('nama') ?> <span class="btn btn-sm btn-warning">Logout</span> </a>
-            <?php } else { ?>
-                <a href=" <?php echo base_url('auth/login') ?> "> <span class="btn btn-dark">Login</span> </a>
-            <?php } ?>
+            <div class="nav-item row-ml-2">
+
+                <?php
+                if ($this->session->userdata('nama')) { ?>
+                    <a href=" <?php echo base_url('auth/logout') ?> " class="btn btn-secondary">Welcome <?php echo $this->session->userdata('nama') ?> <span class="btn btn-sm btn-warning">Logout</span> </a>
+                    <a href=" <?php echo base_url('auth/ganti_password') ?> " class="btn btn-secondary"><span class="btn btn-sm btn-primary">Ganti Password</span> </a>
+                <?php } else { ?>
+                    <a href=" <?php echo base_url('auth/login') ?> "> <span class="btn btn-dark">Login</span> </a>
+                <?php } ?>
+            </div>
 
         </div>
     </div>

@@ -95,6 +95,7 @@
                         <li><a class="nav-link" href="<?php echo base_url('admin/data_customer') ?>"><i class="fas fa-user"></i> <span>Data Customer</span></a></li>
                         <li><a class="nav-link" href="<?php echo base_url('admin/transaksi') ?>"><i class="fas fa-random"></i> <span>Transaksi</span></a></li>
                         <li><a class="nav-link" href="<?php echo base_url('admin/laporan ') ?>"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>
+                        <li><a class="nav-link" href="<?php echo base_url('auth/ganti_password') ?>"><i class="fas fa-lock"></i> <span>Ganti Password</span></a></li>
                         <li><a class="nav-link" href="<?php echo base_url('auth/logout') ?>"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
                     </ul>
 

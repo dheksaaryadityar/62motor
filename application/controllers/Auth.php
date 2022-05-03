@@ -7,6 +7,7 @@ class Auth extends CI_Controller
     {
         $this->_rules();
 
+
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates_admin/header');
             $this->load->view('form_login');
@@ -15,7 +16,7 @@ class Auth extends CI_Controller
             $password       = md5($this->input->post('password'));
 
             $cek = $this->Dealer_model->cek_login($username, $password);
-
+            $this->session->set_userdata('id_customer', $cek->id_customer);
 
             if ($cek == FALSE) {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -56,5 +57,37 @@ class Auth extends CI_Controller
         $this->session->sess_destroy();
 
         redirect('customer/dashboard');
+    }
+
+    public function ganti_password()
+    {
+        $this->load->view('templates_admin/header');
+        $this->load->view('ganti_password');
+    }
+
+    public function ganti_password_aksi()
+    {
+        $pass_baru = $this->input->post('pass_baru');
+        $ulang_pass = $this->input->post('ulang_pass');
+
+        $this->form_validation->set_rules('pass_baru', 'Password Baru', 'required|matches[ulang_pass]');
+        $this->form_validation->set_rules('ulang_pass', 'Ulangi Password', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('templates_admin/header');
+            $this->load->view('ganti_password');
+        } else {
+            $data = array('password' => md5($pass_baru));
+            $id = array('id_customer' => $this->session->userdata('id_customer'));
+
+            $this->Dealer_model->update_password($id, $data, 'customer');
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                Password Berhasil di Update, Silahkan Login
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button></div>');
+
+            redirect('auth/login');
+        }
     }
 }
