@@ -1,132 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>FAQ</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <style type="text/css">
-        body {
-            background: #eee;
-            padding-top: 20px;
-            font-family: monospace;
-        }
-
-        .header {
-            border-radius: 20px 20px 0px 0px;
-            padding: 10px 0px;
-            background: purple;
-            color: #fff;
-            width: 100%;
-            display: flex;
-            align-content: center;
-            justify-content: center;
-        }
-
-        .faq-item {
-            margin-bottom: 40px;
-            margin-top: 40px;
-        }
-
-        .faq-body {
-            display: none;
-            margin-top: 30px;
-        }
-
-        .faq-wrapper {
-            width: 75%;
-            margin: 0 auto;
-        }
-
-        .faq-inner {
-            padding: 30px;
-            background: aliceblue;
-        }
-
-        .faq-plus {
-            float: right;
-            font-size: 1.4em;
-            line-height: 1em;
-            cursor: pointer;
-        }
-
-        hr {
-            background-color: #9b9b9b;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="<?php echo base_url('assets/assets_faq/') ?>style.css">
 </head>
+<section>
+    <h2 class="">FAQ'S</h2>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="faq-wrapper">
-                <div class="header">
-                    <h1>FAQs</h1>
-                </div>
-                <div class="faq-inner">
-                    <div class="faq-item">
-                        <h3>
-                            Bagaimana kalau saya Belum punya Akun?
-                            <span class="faq-plus">&plus;</span>
-                        </h3>
-                        <div class="faq-body">
-                            Silahkan bisa klik di navbar (Register)
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="faq-item">
-                        <h3>
-                            Apakah
-                            <span class="faq-plus">&plus;</span>
-                        </h3>
-                        <div class="faq-body">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="faq-item">
-                        <h3>
-                            What is an FAQ page ?
-                            <span class="faq-plus">&plus;</span>
-                        </h3>
-                        <div class="faq-body">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="faq-item">
-                        <h3>
-                            What is an FAQ page ?
-                            <span class="faq-plus">&plus;</span>
-                        </h3>
-                        <div class="faq-body">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="faq-item">
-                        <h3>
-                            What is an FAQ page ?
-                            <span class="faq-plus">&plus;</span>
-                        </h3>
-                        <div class="faq-body">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="faq">
+        <div class="question">
+            <h3>Bagaimana Kalau Saya belum punya Akun?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <div class="answer">
+            <p>
+                Silahkan Klik Menu (Register)
+            </p>
         </div>
     </div>
 
-    <script type="text/javascript">
-        $(".faq-plus").on('click', function() {
-            $(this).parent().parent().find('.faq-body').slideToggle();
-        });
-    </script>
+    <div class="faq">
+        <div class="question">
+            <h3>Bagaimana Kalau Saya belum punya Akun?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <div class="answer">
+            <p>
+                Silahkan Klik Menu (Register)
+            </p>
+        </div>
+    </div>
+
+
+    <div class="faq">
+        <div class="question">
+            <h3>Bagaimana Kalau Saya belum punya Akun?</h3>
+            <svg width="15" height="10" viewBox="0 0 42 25">
+                <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"></path>
+            </svg>
+        </div>
+        <div class="answer">
+            <p>
+                Silahkan Klik Menu (Register)
+            </p>
+        </div>
+    </div>
+
+
+</section>
+
+<body>
+    <script src="<?php echo base_url('assets/assets_faq/') ?>script.js"></script>
 </body>
 
 </html>
