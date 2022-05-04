@@ -10,7 +10,7 @@
         </div>
     </header>
     <!-- Section-->
-
+    <?php echo $this->session->flashdata('pesan') ?>
     <?php foreach ($motor as $mt) : ?>
 
         <section class="py-2">
@@ -26,7 +26,7 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder"> Merk : <?php echo $mt->merk ?> </h5>
                                     <!-- Product price-->
-                                    <h5>Harga : <?php echo $mt->harga ?> </h5>
+                                    <h5>Harga : Rp <?php echo $mt->harga ?> </h5>
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -35,7 +35,7 @@
                                 if ($mt->status == "0") {
                                     echo "<span class='btn btn-danger' disable>Telah Terjual</span>";
                                 } else {
-                                    echo anchor('customer/beli/tambah_beli/' . $mt->id_motor, '<button class="btn btn-success">Beli</button>');
+                                    echo anchor('customer/beli/tambah_beli/' . $mt->id_motor, '<button class="btn btn-success">Tersedia</button>');
                                 }
 
                                 ?>
