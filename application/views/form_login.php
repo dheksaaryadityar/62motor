@@ -36,7 +36,10 @@
                             </div>
                         </div>
                         <div class="mt-5 text-muted text-center">
-                            Don't have an account? <a href="<?php echo base_url('register') ?>">Create One</a>
+                            Belum punya Akun? <a href="<?php echo base_url('register') ?>">Daftar Disini</a>
+                        </div>
+                        <div class="mt-3 text-muted text-center">
+                            Kembali Ke <a href="<?php echo base_url('customer/dashboard') ?>">Home</a>
                         </div>
                         <div class="simple-footer">
                             Copyright &copy; 62 Motor

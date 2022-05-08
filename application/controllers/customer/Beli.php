@@ -23,7 +23,9 @@ class Beli extends CI_Controller
             'id_customer' => $id_customer,
             'id_motor' => $id_motor,
             'tgl_pembelian' => $tanggal_pembelian,
-            'harga' => $harga
+            'harga' => $harga,
+            'status' => '-',
+            'status_dealer' => 'Belum Selesai',
         );
 
         $this->Dealer_model->insert_data($data, 'transaksi');

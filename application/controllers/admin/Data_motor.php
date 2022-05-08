@@ -100,9 +100,10 @@ class Data_motor extends CI_Controller
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('gambar')) {
-                    echo "Gambar Motor Gagal di Upload";
-                } else {
                     $gambar = $this->upload->data('file_name');
+                    $this->db->set('gambar', $gambar);
+                } else {
+                    echo $this->upload->display_errors();
                 }
 
                 $data = array(
