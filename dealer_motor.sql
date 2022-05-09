@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 11:00 AM
+-- Generation Time: May 09, 2022 at 06:27 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.3.33
 
@@ -41,15 +41,24 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `customer` (
-  `id` int(11) NOT NULL,
+  `id_customer` int(11) NOT NULL,
   `nama` varchar(120) NOT NULL,
   `username` varchar(120) NOT NULL,
   `alamat` varchar(256) NOT NULL,
   `gender` varchar(20) NOT NULL,
   `no_telepon` varchar(20) NOT NULL,
   `no_ktp` varchar(50) NOT NULL,
-  `password` varchar(120) NOT NULL
+  `password` varchar(120) NOT NULL,
+  `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id_customer`, `nama`, `username`, `alamat`, `gender`, `no_telepon`, `no_ktp`, `password`, `role_id`) VALUES
+(9, 'Sholdan', 'user', 'Bekasi Selatan', 'Perempuan', '08990978654', '33333333333334444555', 'ee11cbb19052e40b07aac0ca060c23ee', 2),
+(11, 'admin Sholdan', 'admin', 'admin', 'Laki-laki', '081111111', '123456', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 -- --------------------------------------------------------
 
@@ -91,7 +100,7 @@ CREATE TABLE `motor` (
 INSERT INTO `motor` (`id_motor`, `kode_type`, `merk`, `harga`, `warna`, `tahun`, `status`, `gambar`) VALUES
 (11, '003', 'Honda CBR150R', 'Rp. 50.000.000', 'Hitam', '2021', '1', ''),
 (14, ' 003', 'Kawasaki', 'Rp. 130.000.000', 'Black', '2017', '1', 'r6.jpg'),
-(16, ' 004', 'ZX 10 R', 'Rp. 250.000.000', 'Black', '2022', '0', 'zx10r1.jpg');
+(16, ' 004', 'ZX 10 R', 'Rp. 250.000.000', 'Black', '2022', '1', 'zx10r1.jpg');
 
 -- --------------------------------------------------------
 
@@ -104,8 +113,11 @@ CREATE TABLE `transaksi` (
   `id_customer` int(11) NOT NULL,
   `id_motor` int(11) NOT NULL,
   `tgl_pembelian` date NOT NULL,
-  `status_pengembalian` varchar(50) NOT NULL,
-  `status_dealer` varchar(50) NOT NULL
+  `harga` varchar(120) NOT NULL,
+  `status_admin` varchar(50) NOT NULL,
+  `status_dealer` varchar(50) NOT NULL,
+  `bukti_pembayaran` varchar(120) NOT NULL,
+  `status_pembayaran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -144,7 +156,7 @@ ALTER TABLE `admin`
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_customer`);
 
 --
 -- Indexes for table `dealer`
@@ -184,7 +196,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `dealer`
@@ -202,7 +214,7 @@ ALTER TABLE `motor`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_dealer` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dealer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `type`
