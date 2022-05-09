@@ -26,10 +26,11 @@
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td> <a href="" class="btn btn-sm btn-secondary">Print Invoice</a> </td>
+                                <td> <a href="<?php echo base_url('customer/transaksi/cetak_invoice/' . $tr->id_dealer) ?>" class="btn btn-sm btn-secondary">Print Invoice</a> </td>
                             </tr>
                         <?php endforeach; ?>
                     </table>
+                    <a style="width: 100%;" href="<?php echo base_url('customer/transaksi') ?>" class="btn btn-sm btn-secondary mt-3">Kembali</a>
                 </div>
             </div>
         </div>
@@ -58,6 +59,8 @@
                     <?php } elseif ($tr->status_pembayaran == '1') { ?>
                         <button style="width: 100%; " class="btn btn-sm btn-success"><i class="fa fa-check"></i>Pembayaran Selesai</button>
                     <?php } ?>
+
+
                 </div>
             </div>
         </div>

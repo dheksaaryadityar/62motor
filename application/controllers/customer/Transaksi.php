@@ -65,4 +65,14 @@ class Transaksi extends CI_Controller
               </div>');
         redirect('customer/transaksi');
     }
+
+    public function cetak_invoice($id)
+    {
+        $data['transaksi'] = $this->db->query("SELECT * FROM 
+        transaksi tr, motor mt, customer cs 
+        WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer 
+        AND tr.id_dealer='$id' ")->result();
+
+        $this->load->view('customer/cetak_invoice', $data);
+    }
 }
