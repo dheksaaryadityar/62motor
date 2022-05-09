@@ -12,6 +12,7 @@
                     <th>Motor</th>
                     <th>Tgl Beli</th>
                     <th>Harga</th>
+                    <th> Cek Pembayaran</th>
                     <th>Action</th>
                 </tr>
 
@@ -24,6 +25,13 @@
                         <td> <?php echo $tr->merk ?> </td>
                         <td> <?php echo date('d/m/Y', strtotime($tr->tgl_pembelian));  ?> </td>
                         <td> <?php echo $tr->harga ?> </td>
+                        <td>
+                            <?php if (empty($tr->bukti_pembayaran)) { ?>
+                                <button class="btn btn-sm btn-danger"> <i class="fas fa-times-circle"></i> </button>
+                            <?php } else { ?>
+                                <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/transaksi/pembayaran/' . $tr->id_dealer) ?>"><i class="fas fa-check-circle"></i></a>
+                            <?php } ?>
+                        </td>
                         <td> <?php
 
                                 if ($tr->status == "1") {
