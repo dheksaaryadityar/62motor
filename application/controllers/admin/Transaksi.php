@@ -9,8 +9,6 @@ class Transaksi extends CI_Controller
         transaksi tr, motor mt, customer cs 
         WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer ")->result();
 
-
-
         $this->load->view('templates_admin/header',);
         $this->load->view('templates_admin/sidebar',);
         $this->load->view('admin/data_transaksi', $data);
@@ -50,5 +48,39 @@ class Transaksi extends CI_Controller
         $filePembayaran = $this->Dealer_model->downloadPembayaran($id);
         $file = 'assets/upload/' . $filePembayaran['bukti_pembayaran'];
         force_download($file, NULL);
+    }
+
+    public function transaksi_selesai($id)
+    {
+        $where = array('id_dealer' => $id);
+        $data['transaksi'] = $this->db->query("SELECT * FROM transaksi WHERE id_dealer='$id' ")->result();
+
+        $this->load->view('templates_admin/header',);
+        $this->load->view('templates_admin/sidebar',);
+        $this->load->view('admin/transaksi_selesai', $data);
+    }
+
+    public function transaksi_selesai_aksi()
+    {
+        $id                     = $this->input->post('id_dealer');
+        $status_admin                  = $this->input->post('status_admin');
+        $status_dealer         = $this->input->post('status_dealer');
+
+        $data = array(
+            'status_admin' => $status_admin,
+            'status_dealer' => $status_dealer
+        );
+        $where = array(
+            'id_dealer' => $id
+        );
+
+        $this->Dealer_model->update_data('transaksi', $data, $where);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Transaksi Berhasil Di Update!!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+</div>');
+        redirect('admin/transaksi');
     }
 }

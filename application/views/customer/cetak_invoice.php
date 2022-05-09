@@ -46,6 +46,9 @@
         </tr>
 
     <?php endforeach; ?>
+    <tr style="font-weight: bold;">
+        <td>© Dealer 62 Motor, Invoice Ini Dianggap SAH oleh Dealer 62 Motor</td>
+    </tr>
 </table>
 
 <script type="text/javascript">

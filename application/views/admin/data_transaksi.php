@@ -12,7 +12,9 @@
                     <th>Motor</th>
                     <th>Tgl Beli</th>
                     <th>Harga</th>
-                    <th> Cek Pembayaran</th>
+                    <th>Cek Pembayaran</th>
+                    <th>Status Admin</th>
+                    <th>Status Dealer</th>
                     <th>Action</th>
                 </tr>
 
@@ -32,6 +34,8 @@
                                 <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/transaksi/pembayaran/' . $tr->id_dealer) ?>"><i class="fas fa-check-circle"></i></a>
                             <?php } ?>
                         </td>
+                        <td> <?php echo $tr->status_admin ?> </td>
+                        <td> <?php echo $tr->status_dealer ?> </td>
                         <td> <?php
 
                                 if ($tr->status == "1") {
@@ -39,8 +43,8 @@
                                 } else { ?>
 
                                 <div class="row">
-                                    <a class="btn btn-sm btn-success mr-2" href="<?php echo base_url('admin/transaksi/transaksi_selesai') ?>"> <i class="fas fa-check"></i> </a>
-                                    <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/transaksi/transaksi_batal') ?>"> <i class="fas fa-times"></i> </a>
+                                    <a class="btn btn-sm btn-success mr-2" href="<?php echo base_url('admin/transaksi/transaksi_selesai/' . $tr->id_dealer) ?>"> <i class="fas fa-check"></i> </a>
+                                    <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/transaksi/transaksi_batal/' . $tr->id_dealer) ?>"> <i class="fas fa-times"></i> </a>
                                 </div>
 
                             <?php } ?>
