@@ -4,7 +4,9 @@
             <h1>Data Transaksi</h1>
         </div>
 
+
         <div class="table-responsive">
+            <span class="mt-2 p-2"> <?php echo $this->session->flashdata('pesan') ?> </span>
             <table class="table-responsive table table-bordered table-striped">
                 <tr>
                     <th>No</th>
@@ -44,7 +46,7 @@
 
                                 <div class="row">
                                     <a class="btn btn-sm btn-success mr-2" href="<?php echo base_url('admin/transaksi/transaksi_selesai/' . $tr->id_dealer) ?>"> <i class="fas fa-check"></i> </a>
-                                    <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/transaksi/transaksi_batal/' . $tr->id_dealer) ?>"> <i class="fas fa-times"></i> </a>
+                                    <a onclick="return confirm('Yakin Transaksi <?php echo $tr->nama ?> Motor <?php echo $tr->merk ?> di Batal kan?')" class="btn btn-sm btn-danger" href="<?php echo base_url('admin/transaksi/batal_transaksi/' . $tr->id_dealer) ?>"> <i class="fas fa-times"></i> </a>
                                 </div>
 
                             <?php } ?>
@@ -55,6 +57,5 @@
                 <?php endforeach; ?>
             </table>
         </div>
-
     </section>
 </div>

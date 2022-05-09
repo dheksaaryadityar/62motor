@@ -13,6 +13,7 @@
                     <th>Harga</th>
                     <th>Tanggal Pembelian</th>
                     <th>Action</th>
+                    <th>Batal</th>
                 </tr>
 
                 <?php $no = 1;
@@ -29,11 +30,38 @@
                                 <a href="<?php echo base_url('customer/transaksi/pembayaran/' . $tr->id_dealer) ?>" class="btn btn-sm btn-success">Cek Pembayaran</a>
                             <?php } ?>
                         </td>
+                        <td>
+
+                            <?php if ($tr->status_dealer == 'Belum Selesai') { ?>
+                                <a onclick="return confirm('Yakin Transaksi di Batal kan?')" class="btn btn-sm btn-danger" href="<?php echo base_url('customer/transaksi/batal_transaksi/' . $tr->id_dealer) ?>">Batal</a>
+                            <?php  } else {  ?>
+                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Batal
+                                </button>
+                            <?php } ?>
+
+
+                        </td>
                     </tr>
-
-
                 <?php endforeach; ?>
             </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Informasi Batal Transaksi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Mohon Maaf, Transaksi Ini Sudah Selesai dan tidak bisa Di Batalkan!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup Informasi</button>
+            </div>
         </div>
     </div>
 </div>

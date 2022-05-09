@@ -83,4 +83,26 @@ class Transaksi extends CI_Controller
 </div>');
         redirect('admin/transaksi');
     }
+
+    public function batal_transaksi($id)
+    {
+        $where = array('id_dealer' => $id);
+        $data = $this->Dealer_model->get_where($where, 'transaksi')->row();
+
+        $where2 = array('id_motor' => $data->id_motor);
+
+
+        $data2 = array('status' => '1');
+
+        $this->Dealer_model->update_data('motor', $data2, $where2);
+        $this->Dealer_model->delete_data($where, 'transaksi');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    Transaksi Berhasil dibatalkan!
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                        </button>
+              </div>');
+
+        redirect('admin/transaksi');
+    }
 }

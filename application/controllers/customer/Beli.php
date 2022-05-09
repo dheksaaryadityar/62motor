@@ -24,6 +24,8 @@ class Beli extends CI_Controller
             'id_motor' => $id_motor,
             'tgl_pembelian' => $tanggal_pembelian,
             'harga' => $harga,
+            'status_admin' => '-',
+            'status_dealer' => 'Belum Selesai'
 
         );
 
