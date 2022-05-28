@@ -11,22 +11,22 @@
     </header>
     <!-- Section-->
     <?php echo $this->session->flashdata('pesan') ?>
-    <?php foreach ($motor as $mt) : ?>
 
-        <section class="py-2">
-            <div class="container px-4">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    <div class="col mb-5">
-                        <div class="card h-100">
+    <section class="py-2">
+        <div class="container px-4 justify-content-center">
+            <div class="row gx-lg-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <?php foreach ($motor as $mt) : ?>
+                    <div class="col mb-3 mt-3 ">
+                        <div class="card h-100 ">
                             <!-- Product image-->
-                            <img class="card-img-top" width="160px" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>" alt="" />
+                            <img class="card-img-top" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>" alt="" />
                             <!-- Product details-->
                             <div class="card-body">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder"> Merk : <?php echo $mt->merk ?> </h5>
                                     <!-- Product price-->
-                                    <h5>Harga : Rp <?php echo $mt->harga ?> </h5>
+                                    <h5>Harga : Rp. <?php echo $mt->harga ?> </h5>
                                 </div>
                             </div>
                             <!-- Product actions-->
@@ -45,12 +45,10 @@
 
                         </div>
                     </div>
-
-
-
-                </div>
+                <?php endforeach; ?>
             </div>
-        </section>
+        </div>
+    </section>
 
-    <?php endforeach; ?>
+
     <!-- Footer-->

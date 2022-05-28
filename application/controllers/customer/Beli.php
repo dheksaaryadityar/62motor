@@ -16,20 +16,26 @@ class Beli extends CI_Controller
     {
         $id_customer                 = $this->session->userdata('id_customer');
         $id_motor                    = $this->input->post('id_motor');
-        $tanggal_pembelian           = $this->input->post('tgl_pembelian');
+        $tanggal_pengantaran           = $this->input->post('tgl_pengantaran');
         $harga                       = $this->input->post('harga');
+        $alamat_antar                       = $this->input->post('alamat_antar');
+        $nama_penerima                       = $this->input->post('nama_penerima');
+        $no_penerima                       = $this->input->post('no_penerima');
 
         $data = array(
             'id_customer' => $id_customer,
             'id_motor' => $id_motor,
-            'tgl_pembelian' => $tanggal_pembelian,
+            'tgl_pengantaran' => $tanggal_pengantaran,
             'harga' => $harga,
+            'alamat_antar' => $alamat_antar,
+            'nama_penerima' => $nama_penerima,
+            'no_penerima' => $no_penerima,
             'status_admin' => '-',
             'status_dealer' => 'Belum Selesai'
 
         );
 
-        $this->Dealer_model->insert_data($data, 'transaksi');
+        $this->Dealer_model->insert_data('transaksi', $data);
         $status = array(
             'status' => '0'
         );

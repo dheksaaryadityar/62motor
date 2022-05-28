@@ -34,7 +34,7 @@
                                     ?> </td>
                         </tr>
                         <tr>
-                            <td><a class="btn btn-sm btn-warning ml-4" href="<?php echo base_url('customer/dashboard/') ?>">Kembali</a> </td>
+                            <td><a class="btn btn-sm btn-secondary ml-4" href="<?php echo base_url('customer/dashboard/') ?>">Kembali</a> </td>
                             <td>
                                 <?php
                                 if ($dt->status == "0") {

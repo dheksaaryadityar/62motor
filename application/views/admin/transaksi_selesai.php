@@ -10,16 +10,13 @@
 
             <input type="hidden" name="id_dealer" value="<?php echo $tr->id_dealer ?>">
 
-            <div class="from-group">
-                <label for="">Status Admin </label>
-                <input type="text" name="status_admin" class="form-control" value="<?php echo $tr->status_admin ?>">
-            </div>
             <div class="from-group mt-3">
                 <label for="">Status Dealer </label>
                 <select name="status_dealer" class="form-control" id="">
                     <option value="<?php echo $tr->status_dealer ?>"> <?php echo $tr->status_dealer ?> </option>
-                    <option value="Terjual">Terjual</option>
-                    <option value="Belum Terjual">Belum Terjual</option>
+                    <option value="Selesai">Selesai</option>
+                    <option value="Proses">Proses</option>
+                    <option value="Belum Selesai">Belum Selesai</option>
                 </select>
             </div>
 

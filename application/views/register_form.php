@@ -1,4 +1,3 @@
-<body>
     <div id="app">
         <section class="section">
             <div class="container mt-5">
@@ -13,66 +12,46 @@
 
                             <div class="card-body">
                                 <form method="POST" action="<?php echo base_url('register') ?>">
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <label for="nama">Nama</label>
-                                            <input id="nama" type="text" class="form-control" name="nama" autofocus>
-                                            <?php echo form_error('nama', '<div class="text-small text-danger">', '</div>') ?>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="username">Username</label>
-                                            <input id="username" type="text" class="form-control" name="username">
-                                            <?php echo form_error('username', '<div class="text-small text-danger">', '</div>') ?>
-                                        </div>
-                                    </div>
-
                                     <div class="form-group">
-                                        <label for="alamat">Alamat</label>
-                                        <input id="alamat" type="text" class="form-control" name="alamat">
-                                        <?php echo form_error('alamat', '<div class="text-small text-danger">', '</div>') ?>
-                                        <div class="invalid-feedback">
-                                        </div>
+                                        <label for="">Nama</label>
+                                        <input type="text" name="nama" class="form-control">
+                                        <?php echo form_error('nama', '<span class="text-small text-danger">', '</span>') ?>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <label for="password" class="d-block">Gender</label>
-                                            <select class="form-control" name="gender">
-                                                <option value="">Pilih Gender</option>
-                                                <option value="">Laki-laki</option>
-                                                <option value="">Perempuan</option>
-                                            </select>
-                                            <?php echo form_error('gender', '<div class="text-small text-danger">', '</div>') ?>
-                                            <div id="pwindicator" class="pwindicator">
-                                                <div class="bar"></div>
-                                                <div class="label"></div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label for="no_telepon" class="d-block">No Telepon</label>
-                                            <input id="no_telepon" type="number" class="form-control" name="no_telepon">
-                                            <?php echo form_error('no_telepon', '<div class="text-small text-danger">', '</div>') ?>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="">Username</label>
+                                        <input type="text" name="username" class="form-control">
+                                        <?php echo form_error('username', '<span class="text-small text-danger">', '</span>') ?>
                                     </div>
-
-
-                                    <div class="row">
-                                        <div class="form-group col-6">
-                                            <label>No KTP</label>
-                                            <input type="text" name="no_ktp" class="form-control">
-                                            <?php echo form_error('no_ktp', '<div class="text-small text-danger">', '</div>') ?>
-                                        </div>
-                                        <div class="form-group col-6">
-                                            <label>Password</label>
-                                            <input type="password" name="password" class="form-control">
-                                            <?php echo form_error('password', '<div class="text-small text-danger">', '</div>') ?>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                                Register
-                                            </button>
-                                        </div>
-
+                                    <div class="form-group">
+                                        <label for="">Alamat</label>
+                                        <input type="text" name="alamat" class="form-control">
+                                        <?php echo form_error('alamat', '<span class="text-small text-danger">', '</span>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Gender</label>
+                                        <select class="form-control" name="gender" id="">
+                                            <option value="">Pilih Gender</option>
+                                            <option value="Laki-laki">Laki - laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                        <?php echo form_error('alamat', '<span class="text-small text-danger">', '</span>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">No Telepon</label>
+                                        <input type="text" name="no_telepon" class="form-control">
+                                        <?php echo form_error('no_telepon', '<span class="text-small text-danger">', '</span>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">No KTP</label>
+                                        <input type="text" name="no_ktp" class="form-control">
+                                        <?php echo form_error('no_ktp', '<span class="text-small text-danger">', '</span>') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                        <?php echo form_error('password', '<span class="text-small text-danger">', '</span>') ?>
+                                    </div>
+                                    <button value="submit" class="btn btn-sm btn-primary" style="width: 100%;">Daftar</button>
                                 </form>
                             </div>
                         </div>

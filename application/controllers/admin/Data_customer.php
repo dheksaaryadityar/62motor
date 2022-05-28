@@ -33,6 +33,7 @@ class Data_customer extends CI_Controller
             $no_telepon        = $this->input->post('no_telepon');
             $no_ktp       = $this->input->post('no_ktp');
             $password           = md5($this->input->post('password'));
+            $role_id            = '2';
 
             $data = array(
 
@@ -43,6 +44,7 @@ class Data_customer extends CI_Controller
                 'no_telepon' => $no_telepon,
                 'no_ktp' => $no_ktp,
                 'password' => $password,
+                'role_id' => $role_id,
             );
 
             $this->Dealer_model->insert_data($data, 'customer');
@@ -119,7 +121,7 @@ class Data_customer extends CI_Controller
 
     public function _rules()
     {
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('nama', 'Nama ', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('alamat', 'Alamat', 'required');
         $this->form_validation->set_rules('gender', 'Gender', 'required');

@@ -37,6 +37,15 @@ class Dealer_model extends CI_Model
             return false;
         }
     }
+    public function ambil_id_pengantar($id)
+    {
+        $hasil = $this->db->where('id_pengantar', $id)->get('pengantar');
+        if ($hasil->num_rows() > 0) {
+            return $hasil->result();
+        } else {
+            return false;
+        }
+    }
 
     public function cek_login()
     {

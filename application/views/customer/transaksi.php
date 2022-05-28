@@ -11,7 +11,9 @@
                     <th>Nama Customer</th>
                     <th>Merk Motor</th>
                     <th>Harga</th>
-                    <th>Tanggal Pembelian</th>
+                    <th>Alamat Pengantaran</th>
+                    <th>Nama Penerima</th>
+                    <th>Tanggal Pengantaran</th>
                     <th>Action</th>
                     <th>Batal</th>
                 </tr>
@@ -23,7 +25,9 @@
                         <td> <?php echo $tr->nama ?> </td>
                         <td> <?php echo $tr->merk ?> </td>
                         <td> <?php echo $tr->harga ?> </td>
-                        <td> <?php echo $tr->tgl_pembelian ?> </td>
+                        <td> <?php echo $tr->alamat_antar ?> </td>
+                        <td> <?php echo $tr->nama_penerima ?> </td>
+                        <td> <?php echo $tr->tgl_pengantaran ?> </td>
                         <td> <?php if ($tr->status_dealer == "Selesai") { ?>
                                 <button class="btn btn-sm btn-danger">Pembelian Selesai</button>
                             <?php } else { ?>
@@ -39,6 +43,7 @@
                                     Batal
                                 </button>
                             <?php } ?>
+
 
 
                         </td>
@@ -57,7 +62,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Mohon Maaf, Transaksi Ini Sudah Selesai dan tidak bisa Di Batalkan!
+                Mohon Maaf, Transaksi Ini Sedang Proses / Sudah Selesai dan tidak bisa Di Batalkan!
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup Informasi</button>

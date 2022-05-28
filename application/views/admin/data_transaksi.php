@@ -10,9 +10,12 @@
             <table class="table-responsive table table-bordered table-striped">
                 <tr>
                     <th>No</th>
-                    <th>Customer</th>
+                    <th>Nama Customer</th>
                     <th>Motor</th>
-                    <th>Tgl Beli</th>
+                    <th>Tgl Pengantaran</th>
+                    <th>Nama Penerima</th>
+                    <th>Alamat Pengantaran</th>
+                    <th>No HP Penerima</th>
                     <th>Harga</th>
                     <th>Cek Pembayaran</th>
                     <th>Status Admin</th>
@@ -27,7 +30,10 @@
                         <td> <?php echo $no++ ?> </td>
                         <td> <?php echo $tr->nama ?> </td>
                         <td> <?php echo $tr->merk ?> </td>
-                        <td> <?php echo date('d/m/Y', strtotime($tr->tgl_pembelian));  ?> </td>
+                        <td> <?php echo date('d/m/Y', strtotime($tr->tgl_pengantaran));  ?> </td>
+                        <td> <?php echo $tr->nama_penerima ?> </td>
+                        <td> <?php echo $tr->alamat_antar ?> </td>
+                        <td> <?php echo $tr->no_penerima ?> </td>
                         <td> <?php echo $tr->harga ?> </td>
                         <td>
                             <?php if (empty($tr->bukti_pembayaran)) { ?>
@@ -36,7 +42,14 @@
                                 <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/transaksi/pembayaran/' . $tr->id_dealer) ?>"><i class="fas fa-check-circle"></i></a>
                             <?php } ?>
                         </td>
-                        <td> <?php echo $tr->status_admin ?> </td>
+                        <td>
+                            <div class="row">
+
+                                <a class="btn btn-sm btn-info mt-3" href="<?php echo base_url('admin/transaksi/update_pengantaran/' . $tr->id_dealer) ?>">Detail Tracking</a>
+                                <a class="btn btn-sm btn-warning mt-3 mb-3" href="<?php echo base_url('admin/transaksi/form_update_pengantaran/' . $tr->id_dealer) ?>">Status Tracking</a>
+
+                            </div>
+                        </td>
                         <td> <?php echo $tr->status_dealer ?> </td>
                         <td> <?php
 

@@ -2,6 +2,12 @@
 
 class Data_type extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        cek_login();
+    }
+
     public function index()
     {
         $data['type'] = $this->Dealer_model->get_data('type')->result();
@@ -14,7 +20,7 @@ class Data_type extends CI_Controller
     {
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/form_tambah_type',);
+        $this->load->view('admin/form_tambah_type');
     }
 
     public function tambah_type_aksi()
@@ -32,7 +38,7 @@ class Data_type extends CI_Controller
                 'nama_type' => $nama_type,
             );
 
-            $this->Dealer_model->insert_data($data, 'type');
+            $this->Dealer_model->insert_data('type', $data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                 Data Type Berhasil Ditambahkan
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -72,7 +78,7 @@ class Data_type extends CI_Controller
                 'id_type' => $id
             );
 
-            $this->Dealer_model->update_data($data, $where, 'type');
+            $this->Dealer_model->update_data('type', $data, $where);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                 Data Type Berhasil Diupdate
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

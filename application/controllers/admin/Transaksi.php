@@ -3,14 +3,20 @@
 class Transaksi extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        cek_login();
+    }
+
     public function index()
     {
         $data['transaksi'] = $this->db->query("SELECT * FROM 
         transaksi tr, motor mt, customer cs 
         WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer ")->result();
 
-        $this->load->view('templates_admin/header',);
-        $this->load->view('templates_admin/sidebar',);
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_transaksi', $data);
     }
 
@@ -19,8 +25,8 @@ class Transaksi extends CI_Controller
         $where = array('id_dealer' => $id);
         $data['pembayaran'] = $this->db->query("SELECT * FROM transaksi WHERE id_dealer='$id' ")->result();
 
-        $this->load->view('templates_admin/header',);
-        $this->load->view('templates_admin/sidebar',);
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/konfirmasi_pembayaran', $data);
     }
 
@@ -55,8 +61,8 @@ class Transaksi extends CI_Controller
         $where = array('id_dealer' => $id);
         $data['transaksi'] = $this->db->query("SELECT * FROM transaksi WHERE id_dealer='$id' ")->result();
 
-        $this->load->view('templates_admin/header',);
-        $this->load->view('templates_admin/sidebar',);
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/transaksi_selesai', $data);
     }
 
@@ -104,5 +110,69 @@ class Transaksi extends CI_Controller
               </div>');
 
         redirect('admin/transaksi');
+    }
+
+    public function update_pengantaran($id)
+
+    {
+        $where = array('id_dealer' => $id);
+        $data['transaksi'] = $this->db->query("SELECT * FROM 
+                transaksi tr, motor mt, customer cs 
+                WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer 
+                ")->result();
+
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/form_pengantaran', $data);
+    }
+
+
+    public function update_tracking_aksi()
+    {
+        $this->_rules();
+
+        $data['transaksi'] = $this->db->query("SELECT * FROM 
+        transaksi tr, motor mt, customer cs 
+        WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer 
+        ")->result();
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->update_pengantaran();
+        } else {
+            $id                             = $this->input->post('id_dealer');
+            $nama_kurir                  = $this->input->post('nama_kurir');
+            $tgl_antar_kurir            = $this->input->post('tgl_antar_kurir');
+            $tracking                   = $this->input->post('tracking');
+            $no_kurir                   = $this->input->post('no_kurir');
+
+            $data = array(
+                'nama_kurir' => $nama_kurir,
+                'tgl_antar_kurir' => $tgl_antar_kurir,
+                'tracking' => $tracking,
+                'tracking' => $tracking,
+                'no_kurir' => $no_kurir,
+            );
+
+            $where = array(
+                'id_dealer' => $id
+            );
+
+            $this->Dealer_model->update_data('transaksi', $data, $where);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        Data Tracking Live Berhasil Di Update
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button></div>');
+            redirect('admin/transaksi');
+        }
+    }
+
+    public function _rules()
+    {
+        $this->form_validation->set_rules('nama_kurir', 'Nama Kurir Pengantar Motor', 'required');
+        $this->form_validation->set_rules('no_kurir', 'No HP Kurir Pengantar Motor', 'required');
+        $this->form_validation->set_rules('tgl_antar_kurir', 'Tanggal Kurir Antar Motor', 'required');
+        $this->form_validation->set_rules('tracking', 'Tracking', 'required');
+        $this->form_validation->set_rules('no_kurir', 'No HP Kurir Pengantar Motor', 'required');
     }
 }

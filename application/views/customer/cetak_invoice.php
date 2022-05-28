@@ -1,5 +1,6 @@
 <table style="width: 50%;">
     <h2>Invoice Pembayaran Anda</h2>
+
     <?php foreach ($transaksi as $tr) : ?>
         <tr>
             <td>Nama Customer</td>
@@ -12,11 +13,21 @@
             <td> <?php echo $tr->merk ?> </td>
         </tr>
         <tr>
-            <td>Tanggal Pembelian</td>
+            <td>Nama Penerima</td>
             <td>:</td>
-            <td> <?php echo $tr->tgl_pembelian ?> </td>
+            <td> <?php echo $tr->nama_penerima ?> </td>
         </tr>
         <tr>
+            <td>No HP Penerima</td>
+            <td>:</td>
+            <td> <?php echo $tr->no_penerima ?> </td>
+        </tr>
+        <tr>
+            <td>Tanggal Pengantaran</td>
+            <td>:</td>
+            <td> <?php echo $tr->tgl_pengantaran ?> </td>
+        </tr>
+        <tr style="font-weight: bold;">
             <td>Status Pembayaran</td>
             <td>:</td>
             <td> <?php if ($tr->status_pembayaran == '0') {
@@ -47,9 +58,21 @@
 
     <?php endforeach; ?>
     <tr style="font-weight: bold;">
-        <td>© Dealer 62 Motor, Invoice Ini Dianggap SAH oleh Dealer 62 Motor</td>
+        <td>
+
+        </td>
     </tr>
 </table>
+
+<p style="font-weight: bold;">© Dealer 62 Motor, Invoice Ini Dianggap SAH oleh Dealer 62 Motor</p>
+<br>
+<br>
+<br>
+<p align="right">Hormat Kami</p>
+<br>
+<br>
+<p align="right">62 Motor</p>
+
 
 <script type="text/javascript">
     window.print();

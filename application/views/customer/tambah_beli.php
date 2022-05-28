@@ -9,17 +9,30 @@
                 <form method="POST" action="<?php echo base_url('customer/beli/tambah_beli_aksi') ?>">
 
 
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Harga Beli</label>
                         <input type="hidden" name="id_motor" value="<?php echo $dt->id_motor ?>" id="">
                         <input type="text" name="harga" id="" class="form-control" value="<?php echo $dt->harga ?>" readonly>
                     </div>
-                    <div class="form-group">
-                        <label for="">Tanggal Beli</label>
-                        <input type="date" name="tgl_pembelian" id="" class="form-control">
+                    <div class="form-group mb-3">
+                        <label for="">Tanggal Pengantaran</label>
+                        <input type="date" name="tgl_pengantaran" id="" class="form-control">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Nama Penerima</label>
+                        <input type="text" name="nama_penerima" id="" class="form-control">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">Alamat</label>
+                        <input type="text" name="alamat_antar" id="" class="form-control">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="">No HP Penerima</label>
+                        <input type="number" name="no_penerima" id="" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-warning mt-3">Beli</button>
+                    <a href="<?php echo base_url('customer/dashboard') ?>" class="btn btn btn-secondary mt-3 ml-6">Kembali</a>
 
                 </form>
 

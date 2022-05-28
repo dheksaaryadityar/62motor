@@ -2,6 +2,13 @@
 
 class Data_motor extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        cek_login();
+    }
+
+
     public function index()
     {
         $data['motor'] = $this->Dealer_model->get_data('motor')->result();
@@ -55,7 +62,7 @@ class Data_motor extends CI_Controller
                     'gambar' => $gambar
                 );
 
-                $this->Dealer_model->insert_data($data, 'motor');
+                $this->Dealer_model->insert_data('motor', $data);
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     Data Motor Berhasil Ditambahkan
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -70,7 +77,7 @@ class Data_motor extends CI_Controller
     public function update_motor($id)
     {
         $where = array('id_motor' => $id);
-        $data['motor'] = $this->db->query("SELECT * FROM motor mt, type tp WHERE mt.kode_type = tp.kode_type AND mt.id_motor='$id'")->result();
+        $data['motor'] = $this->db->query("SELECT * FROM motor mt, type tp WHERE mt.kode_type=tp.kode_type AND mt.id_motor='$id'")->result();
         $data['type'] = $this->Dealer_model->get_data('type')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
@@ -119,7 +126,7 @@ class Data_motor extends CI_Controller
                     'id_motor' => $id
                 );
 
-                $this->Dealer_model->update_data($data, $where, 'motor');
+                $this->Dealer_model->update_data('motor', $data, $where);
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     Data Motor Berhasil Diupdate
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

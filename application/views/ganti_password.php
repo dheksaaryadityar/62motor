@@ -32,6 +32,9 @@
                                             Ganti Password
                                         </button>
                                     </div>
+                                    <div class="mt-3 text-muted text-center">
+                                        Kembali Ke <a href="<?php echo base_url('customer/dashboard') ?>">Home</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>

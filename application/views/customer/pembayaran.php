@@ -14,9 +14,19 @@
                                 <td> <?php echo $tr->merk ?> </td>
                             </tr>
                             <tr>
-                                <th>Tanggal Pembelian</th>
+                                <th>Nama Penerima</th>
                                 <td>:</td>
-                                <td> <?php echo $tr->tgl_pembelian ?> </td>
+                                <td> <?php echo $tr->nama_penerima ?> </td>
+                            </tr>
+                            <tr>
+                                <th>No HP Penerima</th>
+                                <td>:</td>
+                                <td> <?php echo $tr->no_penerima ?> </td>
+                            </tr>
+                            <tr>
+                                <th>Tanggal Pengantaran</th>
+                                <td>:</td>
+                                <td> <?php echo $tr->tgl_pengantaran ?> </td>
                             </tr>
                             <tr class="text-success">
                                 <th>Jumlah Pembayaran</th>
@@ -55,12 +65,10 @@
                             Upload Bukti Pembayaran
                         </button>
                     <?php } elseif ($tr->status_pembayaran == '0') { ?>
-                        <button style="width: 100%; " class="btn btn-sm btn-warning"><i class="fa fa-clock-o"></i>Menunggu Konfirmasi</button>
+                        <button style="width: 100%; " class="btn btn-sm btn-warning"><i class="fa fa-clock-o">Menunggu Konfirmasi</i></button>
                     <?php } elseif ($tr->status_pembayaran == '1') { ?>
-                        <button style="width: 100%; " class="btn btn-sm btn-success"><i class="fa fa-check"></i>Pembayaran Selesai</button>
+                        <a href="<?php echo base_url('customer/transaksi/pengantaran/' . $tr->id_dealer) ?>" class="btn btn-sm btn-info" style="width: 100%;">Klik Disini untuk Status Pengantaran</a>
                     <?php } ?>
-
-
                 </div>
             </div>
         </div>
