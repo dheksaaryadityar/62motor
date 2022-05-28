@@ -35,7 +35,7 @@ class Beli extends CI_Controller
 
         );
 
-        $this->Dealer_model->insert_data('transaksi', $data);
+        $this->Dealer_model->insert_data($data, 'transaksi');
         $status = array(
             'status' => '0'
         );

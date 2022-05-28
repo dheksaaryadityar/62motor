@@ -31,6 +31,30 @@ class Laporan extends CI_Controller
         }
     }
 
+    public function print_laporan()
+    {
+        $dari = $this->input->get('dari');
+        $sampai = $this->input->get('sampai');
+        $data['tittle'] = "Print Laporan Transaksi";
+
+        $data['laporan'] = $this->db->query(" SELECT * FROM transaksi tr, motor mt, customer cs WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer AND date (tgl_pengantaran)  >= '$dari' AND date (tgl_pengantaran)  <= '$sampai' ")->result();
+
+        $this->load->view('templates_admin/header', $data);
+        $this->load->view('admin/print_laporan', $data);
+    }
+
+    public function print_laporan_excel()
+    {
+        $dari = $this->input->get('dari');
+        $sampai = $this->input->get('sampai');
+
+
+        $data['laporan'] = $this->db->query(" SELECT * FROM transaksi tr, motor mt, customer cs WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer AND date (tgl_pengantaran)  >= '$dari' AND date (tgl_pengantaran)  <= '$sampai' ")->result();
+
+        $this->load->view('templates_admin/header');
+        $this->load->view('admin/print_laporan_excel', $data);
+    }
+
     public function _rules()
     {
         $this->form_validation->set_rules('dari', 'Dari Tanggal', 'required');

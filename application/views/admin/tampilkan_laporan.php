@@ -20,6 +20,16 @@
 
         <button type="submit" class="btn bt-sm btn-primary"> <i class="fas fa-eye"></i> Tampilkan Data </button>
 
+        <hr>
+        <div class="btn-group">
+            <a class="btn btn-sm btn-success" target="_blank" href="<?php echo base_url() . 'admin/laporan/print_laporan/?dari='
+                                                                        . set_value('dari') . '&sampai=' . set_value('sampai')
+                                                                    ?>"> <i class="fas fa-print"></i> Print PDF</a>
+            <a class="btn btn-sm btn-success ml-3" target="_blank" href="<?php echo base_url() . 'admin/laporan/print_laporan_excel/?dari='
+                                                                                . set_value('dari') . '&sampai=' . set_value('sampai')
+                                                                            ?>"> <i class="fas fa-print"></i> Print Excel</a>
+        </div>
+
     </form>
 
     <div class="table-responsive">
