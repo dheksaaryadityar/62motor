@@ -6,15 +6,17 @@
 
         <div class="card">
             <div class="card-body">
+
+
                 <?php foreach ($motor as $mt) : ?>
                     <form method="POST" action="<?php echo base_url('admin/data_motor/update_motor_aksi') ?>" enctype="multipart/form-data">
                         <div class="row">
-                            <div class="col-md">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Type Motor</label>
                                     <input type="hidden" name="id_motor" value="<?php echo $mt->id_motor ?>" id="">
                                     <select name="kode_type" class="form-control">
-                                        <option value="<?Php echo $mt->kode_type ?>">
+                                        <option value="<?php echo $mt->kode_type ?>">
                                             Pilih Type Motor
                                         </option>
                                         <?php
@@ -52,9 +54,14 @@
                                 <div class="form-group">
                                     <label for="">Status</label>
                                     <select name="status" class="form-control">
-                                        <option value="">Pilih Status</option>
-                                        <option value="1">Tersedia</option>
-                                        <option value="0">Tidak Tersedia</option>
+                                        <option <?php if ($mt->status == "1") {
+                                                    echo "selected='selected'";
+                                                }
+                                                echo $mt->status; ?> value="1">Tersedia</option>
+                                        <option <?php if ($mt->status == "0") {
+                                                    echo "selected='selected'";
+                                                }
+                                                echo $mt->status; ?> value="0">Tidak Tersedia</option>
                                     </select>
                                     <?php echo form_error('status', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>
@@ -68,6 +75,8 @@
                         </div>
                     </form>
                 <?php endforeach; ?>
+
+
             </div>
         </div>
 </div>

@@ -77,7 +77,7 @@ class Data_motor extends CI_Controller
     public function update_motor($id)
     {
         $where = array('id_motor' => $id);
-        $data['motor'] = $this->db->query("SELECT * FROM motor mt, type tp WHERE mt.kode_type=tp.kode_type AND mt.id_motor='$id'")->result();
+        $data['motor'] = $this->db->query("SELECT * FROM motor mt, type tp WHERE mt.kode_type=tp.kode_type AND mt.id_motor='$id' ")->result();
         $data['type'] = $this->Dealer_model->get_data('type')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
@@ -120,6 +120,7 @@ class Data_motor extends CI_Controller
                     'tahun' => $tahun,
                     'warna' => $warna,
                     'status' => $status,
+                    'gambar' => $gambar
                 );
 
                 $where = array(
