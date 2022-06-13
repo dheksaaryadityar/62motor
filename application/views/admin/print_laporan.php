@@ -17,6 +17,7 @@
         <th>No</th>
         <th>Nama Customer</th>
         <th>Motor</th>
+        <th>Status Pembayaran</th>
         <th>Tgl Pengantaran</th>
         <th>Nama Penerima</th>
         <th>Alamat Pengantaran</th>
@@ -31,6 +32,13 @@
             <td> <?php echo $no++ ?> </td>
             <td> <?php echo $tr->nama ?> </td>
             <td> <?php echo $tr->merk ?> </td>
+            <td> <?php if ($tr->status_pembayaran == '0') {
+                        echo "Belum Lunas";
+                    } else {
+                        echo "Lunas";
+                    } ?>
+
+            </td>
             <td> <?php echo date('d/m/Y', strtotime($tr->tgl_pengantaran));  ?> </td>
             <td> <?php echo $tr->nama_penerima ?> </td>
             <td> <?php echo $tr->alamat_antar ?> </td>

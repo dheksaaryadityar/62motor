@@ -119,7 +119,7 @@ class Transaksi extends CI_Controller
         $data['transaksi'] = $this->db->query("SELECT * FROM 
                 transaksi tr, motor mt, customer cs 
                 WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer 
-                ")->result();
+                    ")->result();
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
@@ -130,11 +130,6 @@ class Transaksi extends CI_Controller
     public function update_tracking_aksi()
     {
         $this->_rules();
-
-        $data['transaksi'] = $this->db->query("SELECT * FROM 
-        transaksi tr, motor mt, customer cs 
-        WHERE tr.id_motor=mt.id_motor AND tr.id_customer=cs.id_customer 
-        ")->result();
 
         if ($this->form_validation->run() == FALSE) {
             $this->update_pengantaran();
@@ -157,7 +152,7 @@ class Transaksi extends CI_Controller
                 'id_dealer' => $id
             );
 
-            $this->Dealer_model->update_data('transaksi', $data, $where);
+            $this->Dealer_model->update_data($data, $where, 'transaksi');
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Data Tracking Live Berhasil Di Update
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

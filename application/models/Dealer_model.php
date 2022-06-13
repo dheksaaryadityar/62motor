@@ -76,4 +76,10 @@ class Dealer_model extends CI_Model
         $query = $this->db->get_where('transaksi', array('id_dealer' => $id));
         return $query->row_array();
     }
+
+    public function ambil_data($id)
+    {
+        $this->db->where('nama', $id);
+        return $this->db->get('customer')->row();
+    }
 }

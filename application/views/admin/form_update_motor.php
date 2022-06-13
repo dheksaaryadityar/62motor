@@ -4,6 +4,7 @@
             <h1>Form Update Motor</h1>
         </div>
 
+
         <div class="card">
             <div class="card-body">
 
@@ -80,6 +81,3 @@
             </div>
         </div>
 </div>
-
-</div>
-</section>

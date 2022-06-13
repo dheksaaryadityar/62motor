@@ -38,7 +38,7 @@ class Data_type extends CI_Controller
                 'nama_type' => $nama_type,
             );
 
-            $this->Dealer_model->insert_data('type', $data);
+            $this->Dealer_model->insert_data($data, 'type');
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                 Data Type Berhasil Ditambahkan
                                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
