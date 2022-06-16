@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2022 at 05:46 PM
+-- Generation Time: Jun 16, 2022 at 04:47 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 5.6.33
 
@@ -58,12 +58,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id_customer`, `nama`, `username`, `alamat`, `gender`, `no_telepon`, `no_ktp`, `password`, `role_id`) VALUES
-(9, 'Sholdan', 'user', 'Bekasi Selatan', 'Perempuan', '08990978654', '33333333333334444555', '81dc9bdb52d04dc20036dbd8313ed055', 2),
+(9, 'Sholdan', 'user', 'Bekasi Selatan', 'Perempuan', '08990978654', '33333333333334444555', 'ee11cbb19052e40b07aac0ca060c23ee', 2),
 (11, 'admin Sholdan', 'admin', 'Bekasi Barat', 'Laki-laki', '081111111', '123456', '21232f297a57a5a743894a0e4a801fc3', 1),
-(16, 'Abdullah Sholdan', 'user2', 'Kayuringin Jaya', 'Laki-laki', '08990978654', '33333333333333333333333333333333333', '202cb962ac59075b964b07152d234b70', 2),
-(17, 'PSBO', 'user', 'Kayuringin Jaya', 'Laki-laki', '214124', '33333333333333333333333333333333333', '28c8edde3d61a0411511d3b1866f0636', 2),
-(18, 'Abdullah Sholdan', 'user3', 'Kayuringin Jaya', 'Perempuan', '08990978654', '3333333333333444455566', 'c4ca4238a0b923820dcc509a6f75849b', 2),
-(19, 'PSBO', 'user3', 'Kayuringin Jaya', 'Laki-laki', '214124', '41241', '81dc9bdb52d04dc20036dbd8313ed055', 2);
+(20, 'Dheksa', 'user3', 'Jl Indonesia', 'Laki-laki', '08888888888', '1287182378123', '92877af70a45fd6a2ed7fe81e1236b78', 2);
 
 -- --------------------------------------------------------
 
@@ -105,10 +102,11 @@ CREATE TABLE `motor` (
 INSERT INTO `motor` (`id_motor`, `kode_type`, `merk`, `harga`, `warna`, `tahun`, `status`, `gambar`) VALUES
 (11, ' 002', 'Honda CBR150R', '50.000.000', 'Hitam', '2021', '1', ''),
 (14, ' 003', 'Kawasaki', '130.000.000', 'Black', '2017', '1', 'r6.jpg'),
-(17, ' 004', 'Vespa Matic', '33.000.000', 'Putih', '2020', '0', 'vesmet.jpg'),
+(17, ' 004', 'Vespa Matic', '33.000.000', 'Putih', '2020', '1', 'vesmet.jpg'),
 (18, ' 005', 'Hayabusa', '200.000.000', 'Black', '2017', '1', 'hayabusa.jpg'),
 (19, ' 001', 'New Vario 160', '33.000.000', 'Putih', '2021', '0', 'vario1601.jpg'),
-(20, ' 001', 'New Vario 160', '33.000.000', 'Merah', '2021', '1', 'Performa-Vario-150-2018-1200x6751.jpg');
+(20, ' 001', 'New Vario 160', '33.000.000', 'Merah', '2021', '2', 'Performa-Vario-150-2018-1200x6751.jpg'),
+(21, ' 003', 'Harley Davidson', '350.000.000', 'Hitam', '2018', '1', 'harley1.jpg');
 
 -- --------------------------------------------------------
 
@@ -141,9 +139,7 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id_dealer`, `id_customer`, `id_motor`, `tgl_pengantaran`, `harga`, `alamat_antar`, `nama_penerima`, `no_penerima`, `status_admin`, `status_dealer`, `tgl_antar_kurir`, `nama_kurir`, `no_kurir`, `tracking`, `bukti_pembayaran`, `status_pembayaran`) VALUES
 (31, 9, 16, '2022-05-12', 'Rp. 250.000.000', 'Jl Nuri 3 No 999 Bekasi Selatan ', 'Satria', '0899123478', '', 'Proses', '2022-05-20', 'Andri', '08999999', 'Sedang proses administrasi oleh Dealer', 'Detail-Success.png', 1),
-(32, 9, 17, '2022-05-30', '33.000.000', 'Jl Nuri 3 No 999 Bekasi Selatan ', 'Satria', '08121221212', '', 'Proses', '', '', '', '', 'Abdullah_Sholdan_Rona.pdf', 1),
-(33, 9, 19, '2022-05-30', '33.000.000', 'Kayuringin Jaya', 'Abdul', '124124124', '-', 'Belum Selesai', '', '', '', '', '', 0),
-(34, 9, 14, '0000-00-00', '130.000.000', 'Jl Nuri 3 No 999 Bekasi Selatan ', 'Satria', '88686868868', '-', 'Belum Selesai', '', '', '', '', '', 0);
+(33, 9, 19, '2022-05-30', '33.000.000', 'Kayuringin Jaya', 'Abdul', '124124124', '', 'Proses', '', '', '', '', 'RTM_0008_1900.pdf', 1);
 
 -- --------------------------------------------------------
 
@@ -165,8 +161,7 @@ INSERT INTO `type` (`id_type`, `kode_type`, `nama_type`) VALUES
 (4, '001', 'Motor Matic'),
 (5, '002', 'Motor Bebek '),
 (6, '003', 'Motor Sport '),
-(7, '004', 'Motor Skuter '),
-(8, '005', 'Uji coba');
+(7, '004', 'Motor Skuter ');
 
 --
 -- Indexes for dumped tables
@@ -222,7 +217,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `dealer`
@@ -234,13 +229,13 @@ ALTER TABLE `dealer`
 -- AUTO_INCREMENT for table `motor`
 --
 ALTER TABLE `motor`
-  MODIFY `id_motor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_motor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_dealer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_dealer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `type`
