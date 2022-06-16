@@ -8,7 +8,7 @@
             <h4 class="alert-heading">Selamat Datang</h4>
             <p>Selamat datang di Dashboard Admin Dealer 62 Motor</p>
             <hr>
-            <p class="mb-0">Silahkan gunakan sesuai dengan Menu di samping kiri ini</p>
+            <p class="mb-0">Silahkan gunakan sesuai dengan Menu di Sidebar samping kiri ini</p>
         </div>
     </section>
 </div>

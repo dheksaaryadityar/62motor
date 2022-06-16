@@ -17,7 +17,6 @@
                     <th>Alamat Pengantaran</th>
                     <th>No HP Penerima</th>
                     <th>Harga</th>
-                    <th>Cek Pembayaran</th>
                     <th>Status Admin</th>
                     <th>Status Dealer</th>
                     <th>Action</th>
@@ -42,7 +41,6 @@
                                 <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/transaksi/pembayaran/' . $tr->id_dealer) ?>"><i class="fas fa-check-circle"></i></a>
                             <?php } ?>
                         </td>
-                        <td></td>
                         <td> <?php echo $tr->status_dealer ?> </td>
                         <td> <?php
 

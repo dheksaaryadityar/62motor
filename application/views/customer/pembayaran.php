@@ -59,6 +59,9 @@
                         <li class="list-group-item">Bank BRI 123456</li>
 
                     </ul>
+                    <div class="alert alert-info" role="alert">
+                        Tracking Motor Anda dibawah ini, Silahkan di lihat terus secara Berkala
+                    </div>
                     <?php if (empty($tr->bukti_pembayaran)) { ?>
                         <!-- Button trigger modal -->
                         <button type="button" style="width: 100%;" class="btn btn-sm btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -67,7 +70,13 @@
                     <?php } elseif ($tr->status_pembayaran == '0') { ?>
                         <button style="width: 100%; " class="btn btn-sm btn-warning"><i class="fa fa-clock-o">Menunggu Konfirmasi</i></button>
                     <?php } elseif ($tr->status_pembayaran == '1') { ?>
-                        <button style="width: 100%; " class="btn btn-sm btn-info"><i class="fa fa-clock-o">Dalam Proses Pengantaran</i></button>
+                        <button style="width: 100%; " class="btn btn-sm btn-primary"><i class="fa fa-clock-o">Terima Kasih, Pembayaran anda sudah dikonfirmasi. Silahkan Menunggu Maks 3 x 24 Jam Motor Akan di antar sesuai Alamat</i></button>
+                    <?php } elseif ($tr->status_pembayaran == '2') { ?>
+                        <button style="width: 100%; " class="btn btn-sm btn-info"><i class="fa fa-clock-o">Dalam Perjalanan Kerumah Anda</i></button>
+                    <?php } elseif ($tr->status_pembayaran == '3') { ?>
+                        <button style="width: 100%; " class="btn btn-sm btn-secondary"><i class="fa fa-clock-o">Motor Pre Order Akan Tersedia 1 Bulan Kedepan</i></button>
+                    <?php } elseif ($tr->status_pembayaran == '4') { ?>
+                        <button style="width: 100%; " class="btn btn-sm btn-dark"><i class="fa fa-clock-o">Motor Sudah sampai Sesuai Alamat dan diterima oleh pihak penerima</i></button>
                     <?php } ?>
                 </div>
             </div>

@@ -54,6 +54,7 @@
                                 <select name="status" class="form-control">
                                     <option value="">Pilih Status</option>
                                     <option value="1">Tersedia</option>
+                                    <option value="2">Pre Order</option>
                                     <option value="0">Tidak Tersedia</option>
                                 </select>
                                 <?php echo form_error('status', '<div class="text-small text-danger">', '</div>') ?>

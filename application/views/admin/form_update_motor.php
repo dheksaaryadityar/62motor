@@ -63,6 +63,10 @@
                                                     echo "selected='selected'";
                                                 }
                                                 echo $mt->status; ?> value="0">Tidak Tersedia</option>
+                                        <option <?php if ($mt->status == "2") {
+                                                    echo "selected='selected'";
+                                                }
+                                                echo $mt->status; ?> value="0">Pre Order</option>
                                     </select>
                                     <?php echo form_error('status', '<div class="text-small text-danger">', '</div>') ?>
                                 </div>

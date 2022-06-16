@@ -30,8 +30,10 @@
                         <td><?php
                             if ($mt->status == "0") {
                                 echo "<span class='badge badge-danger'>Tidak Tersedia</span>";
-                            } else {
+                            } elseif ($mt->status == "1") {
                                 echo "<span class='badge badge-primary'>Tersedia</span>";
+                            } elseif ($mt->status == "2") {
+                                echo "<span class='badge badge-info'>Pre Order</span>";
                             }
                             ?></td>
                         <td>

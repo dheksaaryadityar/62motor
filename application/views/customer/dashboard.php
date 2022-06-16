@@ -34,8 +34,10 @@
                                 <?php
                                 if ($mt->status == "0") {
                                     echo "<span class='btn btn-danger' disable>Telah Terjual</span>";
-                                } else {
+                                } elseif ($mt->status == "1") {
                                     echo anchor('customer/beli/tambah_beli/' . $mt->id_motor, '<button class="btn btn-success">Tersedia</button>');
+                                } elseif ($mt->status == "2") {
+                                    echo "<span class='btn btn-info' disable>Pre Order</span>";
                                 }
 
                                 ?>

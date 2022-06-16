@@ -81,7 +81,7 @@ class Transaksi extends CI_Controller
         );
 
         $this->Dealer_model->update_data('transaksi', $data, $where);
-        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
         Transaksi Berhasil Di Update!!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -102,7 +102,7 @@ class Transaksi extends CI_Controller
 
         $this->Dealer_model->update_data('motor', $data2, $where2);
         $this->Dealer_model->delete_data($where, 'transaksi');
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                     Transaksi Berhasil dibatalkan!
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
