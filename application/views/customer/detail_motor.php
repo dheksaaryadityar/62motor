@@ -27,8 +27,10 @@
                             <th>Status</th>
                             <td> <?php if ($dt->status == '1') {
                                         echo "Tersedia";
-                                    } else {
+                                    } elseif ($dt->status == '0') {
                                         echo "Sudah Terjual";
+                                    } elseif ($dt->status == '2') {
+                                        echo "Pre Order";
                                     }
 
                                     ?> </td>
@@ -39,8 +41,10 @@
                                 <?php
                                 if ($dt->status == "0") {
                                     echo "<span class='btn btn-danger' disable >Telah di jual</span>";
-                                } else {
+                                } elseif ($dt->status == "1") {
                                     echo anchor('customer/beli/tambah_beli/' . $dt->id_motor, '<button class="btn btn-success" >Beli</button>');
+                                } elseif ($dt->status == "2") {
+                                    echo anchor('customer/beli/tambah_beli_preorder/' . $dt->id_motor, '<button class="btn btn-success">Beli Pre Order</button>');
                                 }
 
                                 ?>
