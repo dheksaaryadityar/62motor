@@ -67,7 +67,7 @@
                     <?php } elseif ($tr->status_pembayaran == '0') { ?>
                         <button style="width: 100%; " class="btn btn-sm btn-warning"><i class="fa fa-clock-o">Menunggu Konfirmasi</i></button>
                     <?php } elseif ($tr->status_pembayaran == '1') { ?>
-                        <a href="<?php echo base_url('customer/transaksi/pengantaran/' . $tr->id_dealer) ?>" class="btn btn-sm btn-info" style="width: 100%;">Klik Disini untuk Status Pengantaran</a>
+                        <button style="width: 100%; " class="btn btn-sm btn-info"><i class="fa fa-clock-o">Dalam Proses Pengantaran</i></button>
                     <?php } ?>
                 </div>
             </div>

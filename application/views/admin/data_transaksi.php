@@ -42,14 +42,7 @@
                                 <a class="btn btn-sm btn-primary" href="<?php echo base_url('admin/transaksi/pembayaran/' . $tr->id_dealer) ?>"><i class="fas fa-check-circle"></i></a>
                             <?php } ?>
                         </td>
-                        <td>
-                            <div class="row">
-
-                                <a class="btn btn-sm btn-info mt-3" href="<?php echo base_url('admin/transaksi/update_pengantaran/' . $tr->id_dealer) ?>">Detail Tracking</a>
-                                <a class="btn btn-sm btn-warning mt-3 mb-3" href="<?php echo base_url('admin/transaksi/form_update_pengantaran/' . $tr->id_dealer) ?>">Status Tracking</a>
-
-                            </div>
-                        </td>
+                        <td></td>
                         <td> <?php echo $tr->status_dealer ?> </td>
                         <td> <?php
 
