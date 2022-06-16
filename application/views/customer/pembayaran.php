@@ -59,8 +59,9 @@
                         <li class="list-group-item">Bank BRI 123456</li>
 
                     </ul>
-                    <div class="alert alert-info" role="alert">
-                        Tracking Motor Anda dibawah ini, Silahkan di lihat terus secara Berkala
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Cek dibawah ini!</strong> Untuk Tracking Pembelian Anda
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <?php if (empty($tr->bukti_pembayaran)) { ?>
                         <!-- Button trigger modal -->

@@ -12,6 +12,15 @@ class Beli extends CI_Controller
         $this->load->view('templates_customer/footer');
     }
 
+    public function tambah_beli_preorder($id)
+    {
+        $data['detail'] = $this->Dealer_model->ambil_id_motor($id);
+
+        $this->load->view('templates_customer/header');
+        $this->load->view('customer/tambah_beli_preorder', $data);
+        $this->load->view('templates_customer/footer');
+    }
+
     public function tambah_beli_aksi()
     {
         $id_customer                 = $this->session->userdata('id_customer');

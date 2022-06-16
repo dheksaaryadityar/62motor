@@ -38,12 +38,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="">No Telepon</label>
-                                        <input type="text" name="no_telepon" class="form-control">
+                                        <input type="number" name="no_telepon" class="form-control">
                                         <?php echo form_error('no_telepon', '<span class="text-small text-danger">', '</span>') ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="">No KTP</label>
-                                        <input type="text" name="no_ktp" class="form-control">
+                                        <input type="number" name="no_ktp" class="form-control">
                                         <?php echo form_error('no_ktp', '<span class="text-small text-danger">', '</span>') ?>
                                     </div>
                                     <div class="form-group">

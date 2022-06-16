@@ -37,7 +37,7 @@
                                 } elseif ($mt->status == "1") {
                                     echo anchor('customer/beli/tambah_beli/' . $mt->id_motor, '<button class="btn btn-success">Tersedia</button>');
                                 } elseif ($mt->status == "2") {
-                                    echo "<span class='btn btn-info' disable>Pre Order</span>";
+                                    echo anchor('customer/beli/tambah_beli_preorder/' . $mt->id_motor, '<button class="btn btn-info">Pre Order</button>');
                                 }
 
                                 ?>
