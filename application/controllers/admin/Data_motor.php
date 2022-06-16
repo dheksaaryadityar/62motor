@@ -62,7 +62,7 @@ class Data_motor extends CI_Controller
                     'gambar' => $gambar
                 );
 
-                $this->Dealer_model->insert_data('motor', $data);
+                $this->Dealer_model->insert_data($data, 'motor');
                 $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     Data Motor Berhasil Ditambahkan
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
