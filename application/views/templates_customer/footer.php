@@ -1,6 +1,6 @@
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; 62 Motor</p>
+        <p class="m-0 text-center text-white">Copyright &copy; 62 Motor <br>Kelompok 2 Kelas 19.4A.04 <br> <strong>Tugas Web Progamming III UBSI Cut Mutia Bekasi</strong></p>
     </div>
 </footer>
 <!-- Bootstrap core JS-->

@@ -14,6 +14,7 @@
                     <th>Alamat Pengantaran</th>
                     <th>Nama Penerima</th>
                     <th>Tanggal Pengantaran</th>
+                    <th>No Penerima</th>
                     <th>Action</th>
                     <th>Batal</th>
                 </tr>
@@ -28,8 +29,9 @@
                         <td> <?php echo $tr->alamat_antar ?> </td>
                         <td> <?php echo $tr->nama_penerima ?> </td>
                         <td> <?php echo $tr->tgl_pengantaran ?> </td>
+                        <td> <?php echo $tr->no_penerima ?> </td>
                         <td> <?php if ($tr->status_dealer == "Selesai") { ?>
-                                <button class="btn btn-sm btn-danger">Pembelian Selesai</button>
+                                <button class="btn btn-sm btn-primary">Transaksi Telah Selesai</button>
                             <?php } else { ?>
                                 <a href="<?php echo base_url('customer/transaksi/pembayaran/' . $tr->id_dealer) ?>" class="btn btn-sm btn-success">Cek Pembayaran</a>
                             <?php } ?>
@@ -38,7 +40,7 @@
 
                             <?php if ($tr->status_dealer == 'Belum Selesai') { ?>
                                 <a onclick="return confirm('Yakin Transaksi di Batal kan?')" class="btn btn-sm btn-danger" href="<?php echo base_url('customer/transaksi/batal_transaksi/' . $tr->id_dealer) ?>">Batal</a>
-                            <?php  } else {  ?>
+                            <?php  } elseif ($tr->status_dealer == 'Proses') {  ?>
                                 <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Batal
                                 </button>
@@ -62,7 +64,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Mohon Maaf, Transaksi Ini Sedang Proses / Sudah Selesai dan tidak bisa Di Batalkan!
+                Mohon Maaf, Transaksi Ini Sedang Proses dan tidak bisa Di Batalkan!
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup Informasi</button>

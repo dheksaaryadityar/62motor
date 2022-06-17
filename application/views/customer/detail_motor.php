@@ -3,10 +3,14 @@
         <div class="card-body">
             <?php foreach ($detail as $dt) : ?>
                 <div class="col-md-6">
-                    <img width="120%" src="<?php echo base_url('assets/upload/' . $dt->gambar) ?>" alt="">
+                    <img width="100%" src="<?php echo base_url('assets/upload/' . $dt->gambar) ?>" alt="">
                 </div>
                 <div class="col-md">
                     <table class="table">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Harga Sudah Termasuk Pajak!</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                         <tr>
                             <th>Merk</th>
                             <td> <?php echo $dt->merk ?> </td>

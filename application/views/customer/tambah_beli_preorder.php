@@ -9,8 +9,11 @@
                 <form method="POST" action="<?php echo base_url('customer/beli/tambah_beli_aksi') ?>">
 
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Perhatian!</strong> Untuk Motor Pre Order Akan di antar Sesuai dengan Keadaan Di Gudang
+                        <strong>Perhatian!</strong> Untuk Motor Pre Order Akan di antar Sesuai dengan Keadaan Stock Di Gudang
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Diharapkan Mengisi data dengan Benar ya !!!</strong> Harga Sudah Termasuk Pajak
                     </div>
 
                     <div class="form-group mb-3">

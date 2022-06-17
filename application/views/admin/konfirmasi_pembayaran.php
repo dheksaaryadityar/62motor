@@ -13,7 +13,7 @@
                 <form method="POST" action="<?php echo base_url('admin/transaksi/cek_pembayaran') ?>">
                     <?php foreach ($pembayaran as $pmb) : ?>
 
-                        <a class="btn btn-sm btn-success" href=" <?php echo base_url('admin/transaksi/download_pembayaran/' . $pmb->id_dealer) ?>"><i class="fas fa-dwonload" </i>Download Bukti Pembayaran</a>
+                        <a class="btn btn-sm btn-success mb-4" href=" <?php echo base_url('admin/transaksi/download_pembayaran/' . $pmb->id_dealer) ?>"><i class="fas fa-dwonload" </i>Download Bukti Pembayaran</a>
                         <div class="form-check form-switch ml-5">
                             <input class="form-check-input" type="hidden" role="switch" value="<?php echo $pmb->id_dealer ?>" name="id_dealer">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" value="1" name="status_pembayaran">
@@ -21,9 +21,11 @@
                             <input class="form-check-input2" type="checkbox" role="switch" id="flexSwitchCheckDefault2" value="2" name="status_pembayaran">
                             <label class="form-check-label2" for="flexSwitchCheckDefault2">Proses Pengantaran</label>
                             <input class="form-check-input3" type="checkbox" role="switch" id="flexSwitchCheckDefault3" value="3" name="status_pembayaran">
-                            <label class="form-check-label3" for="flexSwitchCheckDefault2">Motor Pre Order</label>
+                            <label class="form-check-label3" for="flexSwitchCheckDefault2">Motor Pre Order Tersedia 1 - 3 Bulan</label>
                             <input class="form-check-input4" type="checkbox" role="switch" id="flexSwitchCheckDefault4" value="4" name="status_pembayaran">
                             <label class="form-check-label3" for="flexSwitchCheckDefault2">Motor Sudah Di Antar</label>
+                            <input class="form-check-input4" type="checkbox" role="switch" id="flexSwitchCheckDefault4" value="5" name="status_pembayaran">
+                            <label class="form-check-label4" for="flexSwitchCheckDefault2">Pending Pengantaran</label>
                         </div>
                         <hr>
                         <button type="submit" class="btn btn-sm btn-primary">Simpan</button>

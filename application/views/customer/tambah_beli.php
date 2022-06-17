@@ -8,6 +8,9 @@
 
                 <form method="POST" action="<?php echo base_url('customer/beli/tambah_beli_aksi') ?>">
 
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Diharapkan Mengisi data dengan Benar ya !!!</strong> Harga Sudah Termasuk Pajak
+                    </div>
 
                     <div class="form-group mb-3">
                         <label for="">Harga Beli</label>

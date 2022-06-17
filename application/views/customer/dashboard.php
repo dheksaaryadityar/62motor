@@ -19,7 +19,7 @@
                     <div class="col mb-3 mt-3 ">
                         <div class="card h-100 ">
                             <!-- Product image-->
-                            <img class="card-img-top" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>" alt="" />
+                            <img class="card-img-top img-fluid" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>" alt="" />
                             <!-- Product details-->
                             <div class="card-body">
                                 <div class="text-center">
@@ -42,7 +42,6 @@
 
                                 ?>
                                 <a class="btn btn-warning mr-3" href="<?php echo base_url('customer/dashboard/detail_motor/') . $mt->id_motor ?>">Detail</a>
-
                             </div>
 
                         </div>
@@ -51,6 +50,4 @@
             </div>
         </div>
     </section>
-
-
     <!-- Footer-->
