@@ -24,7 +24,7 @@
                             <div class="card-body">
                                 <div class="text-center">
                                     <!-- Product name-->
-                                    <h5 class="fw-bolder"> Merk : <?php echo $mt->merk ?> </h5>
+                                    <h5 class="fw-bolder"><?php echo $mt->merk ?> </h5>
                                     <!-- Product price-->
                                     <h5>Harga : Rp. <?php echo $mt->harga ?> </h5>
                                 </div>

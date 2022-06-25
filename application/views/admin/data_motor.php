@@ -23,7 +23,7 @@
                 foreach ($motor as $mt) : ?>
                     <tr>
                         <td><?php echo $no++ ?></td>
-                        <td><img width="60px" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>"></td>
+                        <td><img width="150px" src="<?php echo base_url('assets/upload/') . $mt->gambar ?>"></td>
                         <td><?php echo $mt->kode_type ?></td>
                         <td><?php echo $mt->merk ?></td>
                         <td><?php echo $mt->harga ?></td>
